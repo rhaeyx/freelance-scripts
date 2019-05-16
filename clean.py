@@ -1,6 +1,6 @@
 from datetime import datetime
 
-filename = 'emails.txt'
+filename = input('Enter a file name: ')
 
 data = []
 
@@ -11,7 +11,7 @@ with open(filename, 'r') as f:
     data = set(data)
     print('Number of emails after removing dupes:', len(data))
 
-filename = datetime.now().strftime('%H-%M-') + filename
+filename = 'clean-' + filename
 print(filename)
 with open(filename, 'w') as f:
     for line in data:
